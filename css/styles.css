@@ -1,0 +1,78 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(109, 160, 154);
+}
+
+.screen-el {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.block-main-el {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px;
+}
+
+.block-main-clear {
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px 0px 40px;
+}
+
+.block-main-highlight {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px;
+}
+
+.block-clear-highlight {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px 0px 35px;
+}
+
+.block-main-set {
+    height: 90px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 30px auto;
+}
+
+.screen-set {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    align-items: center;
+    width: 1200px;
+    background-color: rgb(124, 176, 170);
+}
+
+.block-main-reload {
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px 0px 10px;
+}
+
+.block-main-reload:hover {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px 0px 5px;
+}
+
+.download-link {
+    background-image: url("../img/download.svg");
+    width: 30px;
+    height: 30px;
+    margin: 0px 10px 0px 10px;
+}
+
+.download-link:hover {
+    width: 40px;
+    height: 40px;
+    margin: 0px 5px 0px 5px;
+}
