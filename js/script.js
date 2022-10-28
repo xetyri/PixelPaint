@@ -26,7 +26,7 @@ for (let i = 0; i < colors.length; i++){
 }
 
 const clearButton = document.createElement('img');
-clearButton.src = "/img/clear.svg";
+clearButton.src = "./img/clear.svg";
 clearButton.alt = "clear";
 clearButton.classList.add("block-main-clear");
 MainEl.appendChild(clearButton);
@@ -37,7 +37,7 @@ clearButton.addEventListener('click', () => {
 })
 
 const reloadButton = document.createElement('img');
-reloadButton.src = "/img/reload.svg";
+reloadButton.src = "./img/reload.svg";
 reloadButton.alt = "reload";
 reloadButton.classList.add("block-main-reload");
 MainEl.appendChild(reloadButton);
@@ -47,7 +47,7 @@ reloadButton.addEventListener('click', () => {
 })
 
 const SaveButton = document.createElement('img');
-SaveButton.src = "/img/save.svg";
+SaveButton.src = "./img/save.svg";
 SaveButton.alt = "reload";
 SaveButton.classList.add("block-main-reload");
 MainEl.appendChild(SaveButton);
