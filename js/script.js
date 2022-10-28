@@ -46,26 +46,15 @@ reloadButton.addEventListener('click', () => {
     elements.map(element => element.style.backgroundColor = mainColor);
 })
 
-const SaveButton = document.createElement('img');
-SaveButton.src = "./img/save.svg";
-SaveButton.alt = "reload";
-SaveButton.classList.add("block-main-reload");
-MainEl.appendChild(SaveButton);
-SaveButton.addEventListener('click', () => { 
-    checkedColor();
-    html2canvas(divEl, {
-        onrendered: function (canvas) {
-            var imageData = canvas.toDataURL("image/jpg");
-            var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
-            $("#download").attr("download", "image.jpg").attr("href", newData);
-        }
-    });
-})
-
 const downloadLink = document.createElement('a');
 downloadLink.classList.add("download-link");
 downloadLink.setAttribute('id', "download");
 MainEl.appendChild(downloadLink);
+screenshotUpdate();
+downloadLink.addEventListener('focus', () => { 
+    checkedColor();
+    downloadLink.onclick = screenshotUpdate();
+})
 
 
 for (let i = 0; i < num; i++){
@@ -87,4 +76,14 @@ const checkedColor = () => {
         }
     triger = false;
     clearButton.classList.remove("block-clear-highlight");
+}
+
+function screenshotUpdate() {
+    html2canvas(divEl, {
+        onrendered: function (canvas) {
+            var imageData = canvas.toDataURL("image/jpg");
+            var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+            $("#download").attr("download", "image.jpg").attr("href", newData);
+        }
+    });
 }
