@@ -65,6 +65,7 @@ MainEl.appendChild(fillButton);
 fillButton.addEventListener('click', () => { 
     const colorFill = document.querySelector(".block-main-highlight");
     if (colorFill === null) {
+        checkedColor();
         alert("Choose a fill color.")
     } else {
         checkedColor();
