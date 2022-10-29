@@ -27,7 +27,7 @@ for (let i = 0; i < colors.length; i++){
 
 
 const clearButton = document.createElement('img');
-clearButton.src = "../img/clear.svg";
+clearButton.src = "./img/clear.svg";
 clearButton.alt = "clear";
 clearButton.classList.add("block-main-clear");
 MainEl.appendChild(clearButton);
@@ -53,13 +53,13 @@ gridCheck.addEventListener('click', () => {
 })
 
 const gridCheckImg = document.createElement("img");
-gridCheckImg.src = "../img/grid.svg";
+gridCheckImg.src = "./img/grid.svg";
 gridCheckImg.classList.add("grid-button-img");
 MainEl.appendChild(gridCheckImg);
 
 
 const reloadButton = document.createElement('img');
-reloadButton.src = "../img/reload.svg";
+reloadButton.src = "./img/reload.svg";
 reloadButton.alt = "reload";
 reloadButton.classList.add("block-main-reload");
 MainEl.appendChild(reloadButton);
