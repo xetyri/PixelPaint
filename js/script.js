@@ -25,19 +25,41 @@ for (let i = 0; i < colors.length; i++){
     MainEl.appendChild(buttonEl);
 }
 
+
 const clearButton = document.createElement('img');
-clearButton.src = "./img/clear.svg";
+clearButton.src = "../img/clear.svg";
 clearButton.alt = "clear";
 clearButton.classList.add("block-main-clear");
 MainEl.appendChild(clearButton);
-clearButton.addEventListener('click', () => { 
+clearButton.addEventListener('click', () => {   
     checkedColor();
     triger = true;
     clearButton.classList.add("block-clear-highlight");
 })
 
+
+const gridCheck = document.createElement("input");
+gridCheck.setAttribute("type", "checkbox");
+gridCheck.classList.add("grid-button");
+MainEl.appendChild(gridCheck);
+gridCheck.addEventListener('click', () => { 
+    if (gridCheck.checked) {
+        elements.map(element => element.classList.add("grid-change"));
+        gridCheckImg.classList.add("grid-button-img-activ");
+    } else {
+        elements.map(element => element.classList.remove("grid-change"));
+        gridCheckImg.classList.remove("grid-button-img-activ");
+    }
+})
+
+const gridCheckImg = document.createElement("img");
+gridCheckImg.src = "../img/grid.svg";
+gridCheckImg.classList.add("grid-button-img");
+MainEl.appendChild(gridCheckImg);
+
+
 const reloadButton = document.createElement('img');
-reloadButton.src = "./img/reload.svg";
+reloadButton.src = "../img/reload.svg";
 reloadButton.alt = "reload";
 reloadButton.classList.add("block-main-reload");
 MainEl.appendChild(reloadButton);
@@ -46,20 +68,22 @@ reloadButton.addEventListener('click', () => {
     elements.map(element => element.style.backgroundColor = mainColor);
 })
 
+
 const downloadLink = document.createElement('a');
 downloadLink.classList.add("download-link");
 downloadLink.setAttribute('id', "download");
 MainEl.appendChild(downloadLink);
 screenshotUpdate();
-downloadLink.addEventListener('focus', () => { 
+downloadLink.addEventListener('touchstart', () => { 
     checkedColor();
+    downloadLink.addEventListener('touchmove', () => screenshotUpdate())
     downloadLink.onclick = screenshotUpdate();
 })
 
 
 for (let i = 0; i < num; i++){
     const divBlockEl = document.createElement('div');
-    divBlockEl.classList.add("screen-el");
+    divBlockEl.classList.add("screen-el"); 
     elements.push(divBlockEl);
     divBlockEl.addEventListener('click', () => {
         divBlockEl.style.backgroundColor = !triger?colors[count]:mainColor;
