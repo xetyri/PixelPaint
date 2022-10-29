@@ -58,6 +58,22 @@ gridCheckImg.classList.add("grid-button-img");
 MainEl.appendChild(gridCheckImg);
 
 
+const fillButton = document.createElement('img');
+fillButton.src = "./img/paint.svg";
+fillButton.classList.add("block-main-reload");
+MainEl.appendChild(fillButton);
+fillButton.addEventListener('click', () => { 
+    const colorFill = document.querySelector(".block-main-highlight");
+    if (colorFill === null) {
+        alert("Choose a fill color.")
+    } else {
+        checkedColor();
+        elements.map(element => element.style.backgroundColor = colorFill.style.backgroundColor);
+        console.log(colorFill.style.backgroundColor);
+    }
+})
+
+
 const reloadButton = document.createElement('img');
 reloadButton.src = "./img/reload.svg";
 reloadButton.alt = "reload";
