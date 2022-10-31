@@ -117,7 +117,11 @@ downloadLink.classList.add("download-link");
 downloadLink.setAttribute('id', "download");
 MainEl.appendChild(downloadLink);
 screenshotUpdate();
-downloadLink.addEventListener('touchstart', () => { 
+downloadLink.addEventListener('focus', () => { 
+    checkedColor();
+    downloadLink.onclick = screenshotUpdate();
+})
+downloadLink.addEventListener('touchend', () => { 
     checkedColor();
     downloadLink.addEventListener('touchmove', () => screenshotUpdate())
     downloadLink.onclick = screenshotUpdate();
