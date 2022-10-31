@@ -78,6 +78,11 @@ body {
     background-color: rgb(124, 176, 170);
 }
 
+.screen-main-set{
+    align-items: center;
+    padding: 0px 45px;
+}
+
 .block-main-reload {
     width: 30px;
     height: 30px;
