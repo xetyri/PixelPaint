@@ -111,7 +111,7 @@ const resetToolbar = () => {
             buttons[j].classList.remove("block-main-highlight");
         } 
     }
-    // triger = false;
+    triger = false;
     clearButton.classList.remove("block-clear-highlight");
 }
 
